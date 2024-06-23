@@ -18,16 +18,21 @@
 <body>
 <div class="content">
 
-  <h1><strong>Text-Animator: Dual Control based Text-to-Video Visual Text Generation</strong></h1>
-  <p id="authors"><a href="https://scholar.google.com/citations?user=-bDAN2YAAAAJ&hl=en">Lin Liu</a	><sup>1</sup>, <a href="https://liuquande.github.io/">Quande Liu</a><sup>2</sup><sup>&#x2709;</sup>, <a href="https://scholar.google.com/citations?user=QNnWmasAAAAJ&hl=zh-CN">Shengju Qian</a><sup>2</sup>,Yuan Zhou<sup>3</sup>, Wengang Zhou<sup>1</sup>, Houqiang Li<sup>1</sup> <br>Lingxi Xie<sup>4</sup>,
+  <h1><strong>Text-Animator: Controllable Text Embedding Injection for Text-to-Video Visual Text Generation</strong></h1>
+  <p id="authors"><a href="https://scholar.google.com/citations?user=-bDAN2YAAAAJ&hl=en">Lin Liu</a	><sup>1</sup>, <a href="https://liuquande.github.io/">Quande Liu</a><sup>2</sup>, <a href="https://scholar.google.com/citations?user=QNnWmasAAAAJ&hl=zh-CN">Shengju Qian</a><sup>2</sup>,Yuan Zhou<sup>3</sup>, Wengang Zhou<sup>1</sup>, Houqiang Li<sup>1</sup> <br>Lingxi Xie<sup>4</sup>,
     Qi Tian<sup>4</sup>
     <br>
   <span style="font-size: 18px"><sup>1</sup>EEIS Department, University of Science and Technology of China;&nbsp; <br><sup>2</sup> Tencent ; <br><sup>3</sup>Nanyang Technical University;<br><sup>4</sup>Huawei Tech
   </span></p>
   <div style="text-align: center;">
-    <span style="font-size: 14px"> &nbsp;&nbsp;&nbsp;&nbsp;  &#x2709; Corresponding Authors</span>
+    
   </div>
           <p style="text-align: center;">
+            
+          </p>
+          <p style="text-align: center;">
+            <a href="xxx" target="_blank">[Paper] (Coming soon)</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="xxx" target="_blank">[Code] (Coming soon)</a> &nbsp;&nbsp;&nbsp;&nbsp;
             
           </p>
     </font>
@@ -35,16 +40,15 @@
 <div class="content">
 
   <h2>Results</h2>
-  <p> 
-  </p>
+  Here are some results we shown in the teaser and experiment part of the paper.
   <div class="commContainer"> 
     <div class="commResult">
-      <img class="commresultImage" src="./assets/fifth_part/ann/1.gif">
-      <img class="commresultImage"  src="./assets/fifth_part/ann/2.gif">
-      <img class="commresultImage" src="./assets/fifth_part/ann/3.gif">
-      <img class="commresultImage" src="./assets/fifth_part/ann/4.gif">
-      <img class="commresultImage" src="./assets/fifth_part/ann/5.gif">
-      <img class="commresultImage" src="./assets/fifth_part/ann/6.gif">
+      <img class="commresultImage" width="150" height="150" src="./assets/fifth_part/ann/1.gif">
+      <img class="commresultImage"  width="150" height="150" src="./assets/fifth_part/ann/22.gif">
+      <img class="commresultImage" width="150" height="150" src="./assets/fifth_part/ann/3.gif">
+      <img class="commresultImage"  src="./assets/fifth_part/ann/4.gif">
+      <img class="commresultImage"  src="./assets/fifth_part/ann/5.gif">
+      <img class="commresultImage"  src="./assets/fifth_part/ann/6.gif">
     </div>
   </div> 
 </div>
@@ -68,8 +72,8 @@
 
 <div class="content">
   <h2 style="text-align:center;">Method</h2>
-  <p> Framework of Text-Animator. Given a pre-trained T2V 3D-UNet, the camera controlnet takes camera embedding as input and
-    outputs camera representations; the text and position controlnet takes the combination feature zc as input and outputs position representations These features are then integrated into the 2D Conv layers and temporal attention layers of 3D-UNet at their respective scales.
+  <p> Framework of <strong>Text-Animator</strong>. Given a pre-trained T2V 3D-UNet, the camera controlnet takes camera embedding as input and
+    outputs camera representations; the text and position controlnet takes the combination feature as input and outputs position representations These features are then integrated into the 2D Conv layers and temporal attention layers of 3D-UNet at their respective scales.
   <br>
   <img class="summary-img" src="./assets/framework.png" style="width:80%;"> <br>
 
@@ -80,17 +84,46 @@
 <div class="content">
 
   <h2>Comparison Results</h2>
-  <p> 
+  <p> Qualitative comparison of Text-Animator and others on one example of the LAION-subset dataset. The prompt is ‘Two bags
+    with the word ’CHRISTMAS’ designed on it’. Other methods cannot generate the correct word.
   </p>
-  <div class="commContainer"> 
-  
-      <div><img class="commresultImage" width="100" height="100" src="./assets/fifth_part/hinton/gen2.gif"> <span>Gen2</span> </div>
-      <div><img class="commresultImage" width="100" height="100" src="./assets/fifth_part/hinton/opensora.gif"> <span>Open-sora</span> </div>
-      <div><img class="commresultImage" width="100" height="100" src="./assets/fifth_part/hinton/pika.gif"> <span>Pika.art </span> </div>
-      <div><img class="commresultImage" width="100" height="100" src="./assets/fifth_part/hinton/ours.gif"> <span>Ours </span> </div>
+
       
-   
+      
+      <div class="resultcontainer">
+        <div class="item">
+            <img src="./assets/fifth_part/hinton/gen2.gif" width="150" height="150" alt="Gen2">
+            <p>Gen2</p>
+        </div>
+        <div class="item">
+            <img src="./assets/fifth_part/hinton/opensora.gif" width="150" height="150" alt="Open-sora">
+            <p>Open-sora</p>
+        </div>
+        <div class="item">
+            <img src="./assets/fifth_part/hinton/pika.gif" width="150" height="150" alt="Pika.art">
+            <p>Pika.art</p>
+        </div>
+        <div class="item">
+            <img src="./assets/fifth_part/hinton/anytext.gif" width="150" height="150" alt="Ours">
+            <p>Anytext+i2vgen-xl</p>
+        </div>
+        <div class="item">
+          <img src="./assets/fifth_part/hinton/ours.gif" width="150" height="150" alt="Ours">
+          <p >Ours</p>
+      </div>
   </div> 
+</div>
+
+<div class="content">
+  <h2>Different Speed Results</h2>
+  <div align="center" class="item" center>
+    <video width="640" controls>
+      <source src="assets/testspeed.mp4" type="video/mp4">
+      <source src="movie.ogg" type="video/ogg">
+      <source src="movie.webm" type="video/webm">
+   
+    </video>
+  </div>
 </div>
 
 <div class="content" id="acknowledgements">
