@@ -446,6 +446,19 @@ p code {
   margin-top: 5px;
   margin-bottom: 5px;
  }
+ .resultcontainer2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh; /* Optional: to center vertically within the viewport */
+}
+.item2 {
+  display: inline-block;
+}
+.item2 img {
+  vertical-align: middle;
+}
 
 .ReconSelect {  display: grid;
       margin-top: 5%;
