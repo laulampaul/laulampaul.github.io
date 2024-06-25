@@ -74,7 +74,7 @@
   <p> Framework of <strong>Text-Animator</strong>. Given a pre-trained T2V 3D-UNet, the camera controlnet takes camera embedding as input and
     outputs camera representations; the text and position controlnet takes the combination feature as input and outputs position representations These features are then integrated into the 2D Conv layers and temporal attention layers of 3D-UNet at their respective scales.
   <br>
-  <img class="summary-img" src="./assets/framework.png" style="width:80%;"> <br>
+  <img class="summary-img" src="./assets/framework.svg" style="width:80%;"> <br>
 
 
   <br>
@@ -115,20 +115,18 @@
 
 <div class="content">
   <h2>Different Speed Results</h2>
+ <p>  Under the same camera information, we can control video's movement speed by sampling the camera information of the interval frames <\p>
   <div align="center" class="item" center>
     <div class="resultcontainer">
       <div class="item2">
           <img src="./assets/fifth_part/speed/image44.gif" width="150" height="120" alt="Gen2">
-          <p>speed=2</p>
+          <p>speed=1x</p>
       </div>
       <div class="item2">
           <img src="./assets/fifth_part/speed/image45.gif" width="150" height="120" alt="Open-sora">
-          <p>speed=8</p>
+          <p>speed=4x</p>
       </div>
-      <div class="item2">
-          <img src="./assets/fifth_part/speed/image46.gif" width="150" height="120" alt="Pika.art">
-          <p>speed=12</p>
-      </div>
+      
     </div>
     <!-- <video width="640" controls>
       <source src="assets/testspeed.mp4" type="video/mp4">
