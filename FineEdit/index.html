@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="FineEdit: Fine-Grained Image Edit with Bounding Box Guidance"/>
+  <meta property="og:url" content="https://cyqii.github.io/O-DisCo-Edit.github.io"/>
+  <meta property="og:image" content="static/image/demo1.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="FineEdit: Fine-Grained Image Edit with Bounding Box Guidance">
+  <meta name="twitter:image" content="static/images/demo1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="image diffusion models, image editing">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>FineEdit: Fine-Grained Image Edit with Bounding Box Guidance</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <style>
+    .center-image {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .extra-spacing {
+      margin-bottom: 100px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">FineEdit: Fine-Grained Image Edit with Bounding Box Guidance</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                Haohang Xu,
+              </span>
+              <span class="author-block">
+                 Lin Liu,
+              </span>
+              <span class="author-block">
+                 Zhibo Zhang,
+              </span>
+              <span class="author-block">
+                 Rong Cong,
+              </span>
+              <span class="author-block">
+                 Xiaopeng Zhang,
+              </span>
+              <span class="author-block">
+                 Qi Tian,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Huawei Inc,</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="code-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming soon)</span>
+                  </a>
+                </span>
+
+
+
+            <!-- ArXiv abstract Link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2604.10954" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light extra-spacing">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion-based image editing models have achieved significant progress in real world applications. However, conventional models typically rely on natural language prompts, which often lack the precision required to localize target objects. Consequently, these models struggle to maintain background consistency due to their global image regeneration paradigm. Recognizing that visual cues provide an intuitive means for users to highlight specific areas of interest, we utilize bounding boxes as guidance to explicitly define the editing target. This approach ensures that the diffusion model can accurately localize the target while preserving background consistency. To achieve this, we propose FineEdit, a multi-level bounding box injection method that enables the model to utilize spatial conditions more effectively. To support this high precision guidance, we present FineEdit-1.2M, a large scale, finegrained dataset comprising 1.2 million image editing pairs with precise bounding box annotations. Furthermore, we construct a comprehensive benchmark, termed FineEdit-Bench, which includes 1,000 images across 10 subjects to effectively evaluate region based editing capabilities. Evaluations on FineEdit-Bench demonstrate that our model significantly outperforms state-of-the-art open-source models (e.g., Qwen-Image-Edit and LongCat-Image-Edit) in instruction compliance and background preservation. Further assessments on open benchmarks (GEdit and ImgEdit Bench) confirm its superior generalization and robustness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Object Removal -->
+<section class="hero is-small extra-spacing">
+<div class="hero-body">
+  <div class="container  is-max-desktop">
+    <h2 class="title is-3">Object Removal</h2>
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item item-image1">
+        <img src="static/images/remove1.PNG" style="width: 100%; height: auto;" class="center-image blend-img-background">
+      </div>
+      <div class="item item-image2">
+        <img src="static/images/remove2.PNG" style="width: 100%; height: auto;" class="center-image blend-img-background">
+      </div>
+      <div class="item item-image3">
+        <img src="static/images/remove3.PNG" style="width: 80%; height: auto;" class="center-image blend-img-background">
+      </div>
+      <div class="item item-image4">
+        <img src="static/images/remove4.PNG" style="width: 100%; height: auto;" class="center-image blend-img-background">
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- Object Removal -->
+
+
+<!-- Object Replacement -->
+<section class="hero is-small extra-spacing">
+  <div class="hero-body">
+    <div class="container  is-max-desktop">
+      <h2 class="title is-3">Object Replacement</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-image1">
+          <img src="static/images/replace1.PNG" style="width: 100%; height: auto;" class="center-image blend-img-background">
+        </div>
+        <div class="item item-image2">
+          <img src="static/images/replace2.PNG" style="width: 100%; height: auto;" class="center-image blend-img-background">
+        </div>
+        <div class="item item-image3">
+          <img src="static/images/replace3.PNG" style="width: 100%; height: auto;" class="center-image blend-img-background">
+        </div>
+        <div class="item item-image4">
+          <img src="static/images/replace4.PNG" style="width: 100%; height: auto;" class="center-image blend-img-background">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- Object Replacement -->
+
+
+  <!-- Object Style -->
+<section class="hero is-small extra-spacing">
+  <div class="hero-body">
+    <div class="container  is-max-desktop">
+      <h2 class="title is-3">Object Style</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-image1">
+          <img src="static/images/style1.PNG" style="width: 100%; height: auto;" class="center-image blend-img-background">
+        </div>
+        <div class="item item-image2">
+          <img src="static/images/style2.PNG" style="width: 80%; height: auto;" class="center-image blend-img-background">
+        </div>
+        <div class="item item-image3">
+          <img src="static/images/style3.PNG" style="width: 80%; height: auto;" class="center-image blend-img-background">
+        </div>
+        <div class="item item-image4">
+          <img src="static/images/style4.PNG" style="width: 70%; height: auto;" class="center-image blend-img-background">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- Object Style -->
+
+
+<!-- Addition & Compose -->
+<section class="hero is-small extra-spacing">
+  <div class="hero-body">
+    <div class="container  is-max-desktop">
+      <h2 class="title is-3">Addition & Compose</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-image1">
+          <img src="static/images/add&compose1.PNG" style="width: 80%; height: auto;" class="center-image blend-img-background">
+        </div>
+        <div class="item item-image2">
+          <img src="static/images/add&compose2.PNG" style="width: 80%; height: auto;" class="center-image blend-img-background">
+        </div>
+        <div class="item item-image3">
+          <img src="static/images/add&compose3.PNG" style="width: 80%; height: auto;" class="center-image blend-img-background">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- Addition & Compose -->
+
+
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Method Overview</h2>
+          <center>
+          <img src="static/images/fineedit_framework1.png" alt="Mixed Video-Image Finetuning" class="center-image blend-img-background"/>
+          </center>
+          <div class="level-set has-text-justified">
+            <p>
+              Overview of FineEdit framework, which includes two training stages: (a) Pre-training stage establishes multi-level spatial priors
+              using early and deep fusion. (b) Post-training stage applies reinforcement learning with a novel decoupled reward function.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">U-GAF Pipeline</h2>
+          <center>
+          <img src="static/images/fineedit_framework2.png" alt="Mixed Video-Image Finetuning" class="center-image blend-img-background"/>
+          </center>
+          <div class="level-set has-text-justified">
+            <p>
+              The proposed U-GAF Pipeline (Unified Generation, Annotation, and Filtering) consists of four synergistic stages for high-quality data synthesis: Data Curation, (2) Data
+              Annotation, (3) Edit Generation, and (4) Data Refinement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- BibTex citation 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{molad2023dreamix,
+  title={Dreamix: Video Diffusion Models are General Video Editors},
+  author={Molad, Eyal and Horwitz, Eliahu and Valevski, Dani and Acha, Alex Rav and Matias, Yossi and Pritch, Yael and Leviathan, Yaniv and Hoshen, Yedid},
+  journal={arXiv preprint arXiv:2302.01329},
+  year={2023}
+}</code></pre>
+  </div>
+</section>
+End BibTex citation -->
+
+<!--Acknowledgements
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+  We thank Ely Sarig for creating the video, Jay Tenenbaum for the video narration, Amir Hertz for the implementation of our eval baseline, Daniel Cohen-Or, Assaf Zomet, Eyal Segalis, Matan Kalman and Emily Denton for their valuable inputs that helped improve this work.
+  </div>
+</section>
+End Acknowledgements -->
+  
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+
+<script type="text/javascript">
+var sc_project=12843789; 
+var sc_invisible=1; 
+var sc_security="e9c3bf5f"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12843789/0/e9c3bf5f/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
