@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0042)http://home.ustc.edu.cn/~ll0825/index.html -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <title>Lin Liu's Homepage</title>
@@ -7,18 +6,75 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <meta name="description" content="Lin Liu is currently a graduate student at USTC.">
-  <meta name="keywords" content="Lin Liu, 刘林, liulin, lam lau  Huawei, USTC, Computer Vision, Low-level vision">
+  <meta name="description" content="Lin Liu is a Senior Researcher at Huawei CBG AI Lab, focusing on world models, AIGC, image and video editing, and computer vision.">
+  <meta name="keywords" content="Lin Liu, 刘林, liulin, lam lau, Huawei, AIGC, world models, computer vision, image editing, video editing">
   <meta name="author" content="Lin Liu">
 
   <link rel="stylesheet" href="./Lin Liu&#39;s Homepage_files/w3.css">
 
   <style>
-  .w3-sidebar a {font-family: "Roboto", sans-serif}
-  body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .w3-sidebar a {
+      font-family: "Roboto", sans-serif;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, .w3-wide {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    /* Sidebar navigation */
+    #mySidebar .nav-link {
+      color: #666666 !important;
+      border-left: 3px solid transparent;
+      transition: background-color 0.15s ease, color 0.15s ease,
+                  border-color 0.15s ease;
+    }
+
+    #mySidebar .nav-link:hover,
+    #mySidebar .nav-link.active {
+      color: #111111 !important;
+      background-color: #f1f1f1 !important;
+      border-left-color: #111111;
+    }
+
+    #mySidebar .nav-link.active {
+      font-weight: 700;
+    }
+
+    /* Prevent fixed headers from covering anchor targets. */
+    [id] {
+      scroll-margin-top: 16px;
+    }
+
+    /* Former students and interns */
+    #people tr.former-member td,
+    #people tr.former-member a {
+      color: #999999 !important;
+    }
+
+    #people tr.former-member a:hover {
+      color: #777777 !important;
+    }
+
+    @media (max-width: 992px) {
+      .w3-main {
+        margin-left: 0 !important;
+      }
+
+      #mySidebar {
+        width: 240px !important;
+      }
+
+      [id] {
+        scroll-margin-top: 90px;
+      }
+    }
   </style>
 
-  <link rel="icon" type="image/png" href="http://home.ustc.edu.cn/~ll0825/lamlau&#39;s%20Homepage_files/icons.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23111111'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='48' font-family='Arial,sans-serif' fill='white'%3ELL%3C/text%3E%3C/svg%3E">
 
 </head>
 
@@ -26,26 +82,37 @@
 <body class="w3-content" style="max-width:1000px">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-top w3-right" style="z-index:3;width:100px" id="mySidebar">
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-top"
+     style="z-index:3;width:130px"
+     id="mySidebar"
+     aria-label="Primary navigation">
   <div class="w3-container w3-display-container w3-padding-16">
-    <h6><b>Welcome to liulin's home page.</b></h6>
+    <h6><b>Welcome to Lin Liu's homepage.</b></h6>
   </div>
-  <div class="w3-padding-64 w3-text-light-grey w3-large" style="font-weight:bold">
-    <a href="http://home.ustc.edu.cn/~ll0825/index.html#home" class="w3-bar-item w3-button">Home</a>
-    <a href="http://home.ustc.edu.cn/~ll0825/index.html#news" class="w3-bar-item w3-button">News</a>
-    <a href="http://home.ustc.edu.cn/~ll0825/index.html#projects" class="w3-bar-item w3-button">Projects</a>
-    <a href="http://home.ustc.edu.cn/~ll0825/index.html#talks" class="w3-bar-item w3-button">Talks</a>
-    <a href="http://home.ustc.edu.cn/~ll0825/index.html#publications" class="w3-bar-item w3-button">Research</a>
-    <a href="http://home.ustc.edu.cn/~ll0825/index.html#service" class="w3-bar-item w3-button">Services</a>
-    <a href="http://home.ustc.edu.cn/~ll0825/index.html#award" class="w3-bar-item w3-button">Awards</a>
-    <a href="http://home.ustc.edu.cn/~ll0825/blogs.html" class="w3-bar-item w3-button">Blogs</a>
+  <div class="w3-padding-64 w3-large" style="font-weight:bold">
+    <a href="#home" class="w3-bar-item w3-button nav-link">Home</a>
+    <a href="#edu" class="w3-bar-item w3-button nav-link">Education</a>
+    <a href="#news" class="w3-bar-item w3-button nav-link">News</a>
+    <a href="#publications" class="w3-bar-item w3-button nav-link">Research</a>
+    <a href="#projects" class="w3-bar-item w3-button nav-link">Projects</a>
+    <a href="#talks" class="w3-bar-item w3-button nav-link">Talks</a>
+    <a href="#people" class="w3-bar-item w3-button nav-link">People</a>
+    <a href="#service" class="w3-bar-item w3-button nav-link">Services</a>
+    <a href="#award" class="w3-bar-item w3-button nav-link">Awards</a>
+    <a href="./blogs.html" class="w3-bar-item w3-button nav-link">Blogs</a>
   </div>
 </nav>
 
 <!-- Top menu on small screens -->
 <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
   <div class="w3-bar-item w3-padding-24">LAMLAU</div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" style="font-stretch: extra-expanded;" onclick="w3_open()"><b>≡</b></a>
+  <button type="button"
+          id="menuButton"
+          class="w3-bar-item w3-button w3-padding-24 w3-right"
+          onclick="w3_toggle()"
+          aria-controls="mySidebar"
+          aria-expanded="false"
+          aria-label="Open navigation menu"><b>☰</b></button>
   
 </header>
 
@@ -63,10 +130,10 @@
     	<img style="width: 80%;max-width: 320px" alt="profile photo" src="./Lin Liu&#39;s Homepage_files/photo2.png">
     	<h1>Lin Liu</h1>
 	      <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:800px">
-	       Currently, I am a Senior Reseacher in Huawei CBG AI Lab, leading a small group that mainly works on world model and AIGC. Before that, I obtained PhD degree at University of Science and Technology of China (USTC) and Shanghai AI Laboratory. During my studied, I had internship experience at the Noah's Ark Lab (supervised by Jianzhuang Liu), ByteDance (supervised by <a href="https://scholar.google.com/citations?user=ccmIGVgAAAAJ&amp;hl=zh-CN">Qiubo Chen</a>), and Tencent (supervised remotely by <a href="https://liuquande.github.io/">Quande Liu</a>). I work closely with <a href="https://shanxinyuan.github.io/">Shanxin Yuan</a>, <a href="https://stephenjia.github.io/">Xu Jia</a>, <a href="https://lingxixie.com/Home.html">Lingxi Xie</a>, Xiaopeng Zhang, Mingming Zhao, and <a href="http://scholar.google.com/citations?user=61b6eYkAAAAJ&amp;hl=en">Prof. Qi Tian</a>.
+	       Currently, I am a Senior Researcher at Huawei CBG AI Lab, where I lead a small group working mainly on world models and AIGC. Before joining Huawei, I completed my PhD studies at the University of Science and Technology of China (USTC) and Shanghai AI Laboratory. During my studies, I interned at Noah's Ark Lab (supervised by Jianzhuang Liu), ByteDance (supervised by <a href="https://scholar.google.com/citations?user=ccmIGVgAAAAJ&amp;hl=zh-CN">Qiubo Chen</a>), and Tencent (supervised remotely by <a href="https://liuquande.github.io/">Quande Liu</a>). I work closely with <a href="https://shanxinyuan.github.io/">Shanxin Yuan</a>, <a href="https://stephenjia.github.io/">Xu Jia</a>, <a href="https://lingxixie.com/Home.html">Lingxi Xie</a>, Xiaopeng Zhang, Mingming Zhao, and <a href="https://scholar.google.com/citations?user=61b6eYkAAAAJ&amp;hl=en">Prof. Qi Tian</a>.
 	      </p>
         <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:800px">
-        If you are interested in intern/full-time positions of our group or any other collaboration with me, welcome to contact me via email. (如果对来我们团队实习或全职工作感兴趣，欢迎发送邮件联系我: [hwcbgailab, at, 163, dot, com])
+        If you are interested in internship or full-time positions in our group, or in collaborating with me, please feel free to contact me via email. (如果对来我们团队实习或全职工作感兴趣，欢迎发送邮件联系我: [hwcbgailab, at, 163, dot, com])
         </p>
 	      <p class="w3-center">
 	       
@@ -101,8 +168,8 @@
  </div>
 
 <!-- The News Section -->
-  <h2> &nbsp; News</h2>
-  <div class="w3-container w3-light-grey w3-padding-32" id="news" style="overflow: scroll; height: 200px;">
+  <h2 id="news"> &nbsp; News</h2>
+  <div class="w3-container w3-light-grey w3-padding-32" style="overflow: scroll; height: 200px;">
 	  <p></p><li>Jun. 2026 - Our paper Liveavatar and FineEdit are accepted by ECCV 2026, see you in Sweden!</li><p></p>
 	  <p></p><li>May 2026 - Our paper <a href="https://arxiv.org/abs/2604.10954v1">FineEdit</a> and <a href="https://arxiv.org/abs/2605.23192">ORVE</a> are released, bbox to edit anything you want.</li><p></p>
 	  <p></p><li>Feb.2026 - Three papers has been accepted by CVPR 2026 !</li><p></p>
@@ -126,7 +193,7 @@
       <p></p><li> Jan. 2019 - I join Huawei Noah's Ark Lab as a research intern.</li><p></p>
   </div>
    
-  <div class="w3-container w3-padding-32" "="" id="publications">
+  <div class="w3-container w3-padding-32" id="publications">
     <h2>Publications</h2>
       <p class="w3-left-align" style="line-height:200%">
         My research interests include: 1) AIGC (image/video editing) and world model, 2) low-level vision and computational photography, 3) image/video or data compression, 4) Post-training of NLP.
@@ -237,7 +304,7 @@
                 </td>
                 <td width="75%" valign="middle">
                     <p>
-                        <a target="_blank" href="hhttps://arxiv.org/abs/2512.04677">
+                        <a target="_blank" href="https://arxiv.org/abs/2512.04677">
                             <papertitle>Live Avatar: Streaming Real-time Audio-Driven Avatar Generation with Infinite Length</papertitle>
                         </a>
                         <br>
@@ -375,7 +442,7 @@
                 </td>
                 <td width="75%" valign="middle">
                     <p>
-                        <a target="_blank" href="https://arxiv.org/abs/2506.19833">
+                        <a target="_blank" href="https://arxiv.org/abs/2509.04126">
                             <papertitle>MEPG: Multi-Expert Planning and Generation for Compositionally-Rich Image Generation</papertitle>
                         </a>
                         <br>
@@ -454,7 +521,7 @@
                         <em>arXiv preprint</em>, 2023
                         <br>
                         [<a target="_blank" href="https://arxiv.org/abs/2306.05704">paper</a>]
-                        [<a target="_blank" href="http://home.ustc.edu.cn/~ll0825/xx">code (coming soon)</a>]
+                        [<span>code (coming soon)</span>]
                     </p>
                 </td>
             </tr>
@@ -501,7 +568,6 @@
                             <em>European Conference on Computer Vision (ECCV)</em>, 2022
                             <br>
                             [<a target="_blank" href="https://arxiv.org/abs/2203.06074v1">paper</a>]
-                            [<a target="_blank" href="http://home.ustc.edu.cn/~ll0825/project_TAPE.html">project (code)</a>]
                         </p>
                     </td>
                 </tr>
@@ -702,9 +768,9 @@
     <h2>Projects or Competitions</h2>
           <p></p><li>2022, the <b>5th place</b>, in the Night Photography Rendering Challenge in NTIRE 22</li><p></p>
           <p></p><li>2022, the <b>3rd place</b>, in the HDR Challenge in NTIRE 22</li><p></p>
-          <p></p><li>08/2021, the <b>2nd place</b>, <a href="http://home.ustc.edu.cn/~ll0825/project_llve.html">Low light video enhancement using 3D curve estimation</a> at <a href="https://live.photoplus.cn/live/63034053?accessFrom=live#/list">ByteDance Summer Camp 2021</a> .</li><p></p>
+          <p></p><li>08/2021, the <b>2nd place</b>, Low-light video enhancement using 3D curve estimation at <a href="https://live.photoplus.cn/live/63034053?accessFrom=live#/list">ByteDance Summer Camp 2021</a> .</li><p></p>
 
-          <p></p><li>10/2022, the <b>4th place</b>, <a href="http://home.ustc.edu.cn/~ll0825/project_wirelessmae.html"> FlowMat transformer</a> at <a href="https://www.datafountain.cn/competitions/574/ranking">the 3th Wireless AI Competition</a> .</li><p></p>
+          <p></p><li>10/2022, the <b>4th place</b>, <a href="https://arxiv.org/abs/2306.06125" target="_blank" rel="noopener noreferrer">FlowMat Transformer</a> at <a href="https://www.datafountain.cn/competitions/574/ranking">the 3rd Wireless AI Competition</a> .</li><p></p>
 
   </div>
   
@@ -716,21 +782,10 @@
                    </p>
 	<!--    <p></p><li> 05/2020, "<a href=" "> Edge AI: Progress and Future Directions</a>" at <a href="https://www.qbitai.com/"> <strong>QbitAI</strong></a> using <a href="https://www.bilibili.com/"><strong>bilibili</strong></a>.</li><p></p>-->
   </div>
- <!-- The Publications Section -->
+ <!-- The People Section -->
 
-<style>
-    /* Former students and interns */
-    #service tr.former-member td,
-    #service tr.former-member a {
-        color: #999999 !important;
-    }
-
-    #service tr.former-member a:hover {
-        color: #777777 !important;
-    }
-</style>
 	
-<div class="w3-container w3-padding-32" id="service">
+<div class="w3-container w3-padding-32" id="people">
     <h2>Collaborative Researchers, Students &amp; Interns</h2>
 
     <h3>Collaborative Researchers</h3>
@@ -936,41 +991,145 @@
 <p>2017.10  &nbsp;&nbsp;<b>中国科学技术大学机器人竞赛，第二名</b></p> 
   </div>  
 
-  <!-- <div class="w3-light-grey w3-center w3-padding-24">
-  	 Powered by <a href=" " title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>.<br>
-	<!-- Default Statcounter code for Lin Liu's Homepage
-	https://home.ustc.edu.cn/~ll0825 -->
-		
-  </div>--&gt;
-
-  <!-- End page content -->
-
+  <!-- Optional footer and analytics can be added here. -->
+</div>
+<!-- End page content -->
 
 <script>
-// Accordion 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
+  const MOBILE_BREAKPOINT = 992;
+
+  function w3_toggle() {
+    const menuButton = document.getElementById("menuButton");
+    const isOpen = menuButton && menuButton.getAttribute("aria-expanded") === "true";
+
+    if (isOpen) {
+      w3_close();
+    } else {
+      w3_open();
+    }
   }
-}
 
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
+  function w3_open() {
+    const sidebar = document.getElementById("mySidebar");
+    const overlay = document.getElementById("myOverlay");
+    const menuButton = document.getElementById("menuButton");
 
+    sidebar.style.display = "block";
+    overlay.style.display = "block";
+    if (menuButton) {
+      menuButton.setAttribute("aria-expanded", "true");
+    }
+  }
 
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
+  function w3_close() {
+    const sidebar = document.getElementById("mySidebar");
+    const overlay = document.getElementById("myOverlay");
+    const menuButton = document.getElementById("menuButton");
+
+    sidebar.style.display = "none";
+    overlay.style.display = "none";
+    if (menuButton) {
+      menuButton.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  function closeSidebarOnMobile() {
+    if (window.innerWidth <= MOBILE_BREAKPOINT) {
+      w3_close();
+    }
+  }
+
+  function setActiveNavigation(sectionId) {
+    document.querySelectorAll("#mySidebar .nav-link[href^='#']").forEach((link) => {
+      const isActive = link.getAttribute("href") === `#${sectionId}`;
+      link.classList.toggle("active", isActive);
+
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  function updateActiveNavigation() {
+    const links = Array.from(
+      document.querySelectorAll("#mySidebar .nav-link[href^='#']")
+    );
+    const sections = links
+      .map((link) => document.getElementById(link.getAttribute("href").slice(1)))
+      .filter(Boolean);
+
+    if (!sections.length) {
+      return;
+    }
+
+    const headerOffset = window.innerWidth <= MOBILE_BREAKPOINT ? 110 : 40;
+    const scrollPosition = window.scrollY + headerOffset;
+    let currentSection = sections[0].id;
+
+    sections.forEach((section) => {
+      if (section.offsetTop <= scrollPosition) {
+        currentSection = section.id;
+      }
+    });
+
+    const isAtPageBottom =
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    if (isAtPageBottom) {
+      currentSection = sections[sections.length - 1].id;
+    }
+
+    setActiveNavigation(currentSection);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sidebar = document.getElementById("mySidebar");
+    const overlay = document.getElementById("myOverlay");
+    const menuButton = document.getElementById("menuButton");
+
+    document.querySelectorAll("#mySidebar .nav-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("#")) {
+          setActiveNavigation(href.slice(1));
+        }
+        closeSidebarOnMobile();
+      });
+    });
+
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActiveNavigation();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && window.innerWidth <= MOBILE_BREAKPOINT) {
+        w3_close();
+      }
+    });
+
+    window.addEventListener("hashchange", updateActiveNavigation);
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > MOBILE_BREAKPOINT) {
+        sidebar.style.display = "";
+        overlay.style.display = "none";
+        if (menuButton) {
+          menuButton.setAttribute("aria-expanded", "false");
+        }
+      }
+      updateActiveNavigation();
+    });
+
+    updateActiveNavigation();
+  });
 </script>
 
 
